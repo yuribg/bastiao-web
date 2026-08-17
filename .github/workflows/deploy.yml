@@ -31,5 +31,8 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/bastiao-web/browser # PASTA CORRETA NO ANGULAR 18
-          branch: gh-pages # Branch que armazenará os arquivos compilados
+            folder: dist/bastiao-web/browser # PASTA CORRETA NO ANGULAR 18
+            branch: gh-pages # Branch que armazenará os arquivos compilados
+
+      - name: Copy index.html to 404.html for Angular routing
+        run: cp dist/bastiao-web/browser/index.html dist/bastiao-web/browser/404.html
