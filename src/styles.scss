@@ -28,7 +28,9 @@
 
 /* Texto da aba (ativa, focada ou com hover) */
 .mat-mdc-tab-group .mdc-tab--active .mdc-tab__text-label,
+.mat-mdc-tab-group .mdc-tab--hover .mdc-tab__text-label,
 .mat-mdc-tab-group .mdc-tab:focus .mdc-tab__text-label,
+.mat-mdc-tab-group .mdc-tab:hover .mdc-tab__text-label,
 .mat-mdc-tab-group .mdc-tab--active:focus .mdc-tab__text-label {
   color: var(--turquesa-kefer) !important;
 }
@@ -81,6 +83,7 @@ mat-card {
   --mdc-outlined-button-outline-color: var(--turquesa-kefer);
   --mdc-outlined-button-label-text-color: var(--verde-heket);
   --mdc-outlined-button-hover-state-layer-opacity: 0.06;
+  border-radius: 16px;
 }
 
 .mat-mdc-tab-group {

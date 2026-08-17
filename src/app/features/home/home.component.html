@@ -2,7 +2,7 @@
   <div class="header-container">
     <img [src]="logoUrl" alt="Nova Acrópole" class="brand-logo" />
     <div class="header-text">
-      <h1>Bastião</h1>
+      <h1>Bastiões</h1>
       <p class="subtitle">Artigos para formação filosófica</p>
     </div>
   </div>
@@ -30,12 +30,11 @@
               @for (artigo of data.artigosAnoCorrente; track artigo.id) {
                 <mat-card class="card-bastiao">
                   <mat-card-header class="mes-header">
-                    <mat-chip class="badge-mes">{{ artigo.mes }}</mat-chip>
                     <mat-card-title>{{ artigo.titulo }}</mat-card-title>
                   </mat-card-header>
                   
                   <mat-card-content>
-                    <p>Autoria: {{ artigo.autoria }}</p>
+                    <p><strong>[Bastião de {{ artigo.mes }}] </strong> Autoria: {{ artigo.autoria }}</p>
                   </mat-card-content>
 
                   <mat-card-actions [align]="'start'">
@@ -76,12 +75,11 @@
                 @for (item of getAcervoFiltrado(data); track item.ano) {
                   <mat-card class="card-historico">
                     <mat-card-header class="historico-header">
-                      <div class="ano-badge">{{ item.ano }}</div>
                       <mat-card-title>{{ item.lema }}</mat-card-title>
                     </mat-card-header>
 
                     <mat-card-content>
-                      <p>Autoria: {{ item.autoria }}</p>
+                      <p><strong>[Bastiões de {{ item.ano }}] </strong> Autoria: {{ item.autoria }}</p>
                     </mat-card-content>
 
                     <mat-card-actions [align]="'start'">
