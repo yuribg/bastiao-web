@@ -1,0 +1,166 @@
+{
+  "ano": 2025,
+  "titulo": "Compêndio de Bastiões 2025",
+  "subtitulo": "Coletânea Anual de Orientação e Estudos Filosóficos",
+  "descricao": "Coletânea completa contendo todos os 12 bastiões e orientações do ano de 2025.",
+  "autoriaGeral": "Dirigente Nacional",
+  "artigos": [
+    {
+      "id": "bastiao-2025-01",
+      "numero": 1,
+      "mes": "Janeiro",
+      "titulo": "O Despertar da Vontade",
+      "subtitulo": "A força interior que direciona a ação consciente",
+      "autoria": "JCAP",
+      "data": "Janeiro de 2025",
+      "paragrafos": [
+        "Iniciar um novo ciclo exige mais do que meros desejos ou boas intenções; requer a ativação da Vontade consciente.",
+        "Enquanto o desejo é passivo e reativo às circunstâncias externas, a Vontade é uma força ativa que nasce do centro do ser humano e se direciona a um propósito elevado.",
+        "Ao longo deste ano, o convite é para cultivar o hábito de definir prioridades com clareza e sustentá-las com perseverança, mesmo diante das oscilações de ânimo cotidianas."
+      ]
+    },
+    {
+      "id": "bastiao-2025-02",
+      "numero": 2,
+      "mes": "Fevereiro",
+      "titulo": "A Disciplina como Liberdade Interior",
+      "subtitulo": "O ritmo e a constância que libertam a mente",
+      "autoria": "JCAP",
+      "data": "Fevereiro de 2025",
+      "paragrafos": [
+        "Muitas vezes a disciplina é associada erroneamente à rigidez ou limitação, quando na verdade é a chave para a verdadeira autonomia.",
+        "A mente sem disciplina torna-se escrava do momento e dos impulsos passageiros, ao passo que o indivíduo disciplinado conquista domínio sobre seu tempo e energia."
+      ]
+    },
+    {
+      "id": "bastiao-2025-03",
+      "numero": 3,
+      "mes": "Março",
+      "titulo": "A Busca pela Unidade no Convívio",
+      "subtitulo": "Harmonizando diferenças em prol do bem comum",
+      "autoria": "JCAP",
+      "data": "Março de 2025",
+      "paragrafos": [
+        "A convivência humana é um espelho contínuo que revela nossas virtudes e nossas necessidades de aprimoramento.",
+        "Buscar a unidade não significa exigir uniformidade de pensamentos, mas sim encontrar a convergência de valores e a fraternidade no agir."
+      ]
+    },
+    {
+      "id": "bastiao-2025-04",
+      "numero": 4,
+      "mes": "Abril",
+      "titulo": "A Arte do Discernimento (Virya)",
+      "subtitulo": "Separando o essencial do acessório nas escolhas",
+      "autoria": "JCAP",
+      "data": "Abril de 2025",
+      "paragrafos": [
+        "Em um mundo saturado de informações e ruídos, a inteligência filosófica atua como um filtro necessário.",
+        "O discernimento nos permite olhar além das aparências superficiais e escolher o que verdadeiramente constrói o caráter e edifica o meio ao nosso redor."
+      ]
+    },
+    {
+      "id": "bastiao-2025-05",
+      "numero": 5,
+      "mes": "Maio",
+      "titulo": "A Serenidade Diante da Adversidade",
+      "subtitulo": "Fortaleza mental e temperança nos imprevistos",
+      "autoria": "JCAP",
+      "data": "Maio de 2025",
+      "paragrafos": [
+        "Não podemos controlar todos os eventos externos, mas somos inteiramente responsáveis por nossas reações diante deles.",
+        "Cultivar a serenidade não significa insensibilidade, mas manter a estabilidade interior quando o entorno se torna agitado ou incerto."
+      ]
+    },
+    {
+      "id": "bastiao-2025-06",
+      "numero": 6,
+      "mes": "Junho",
+      "titulo": "A Fidelidade aos Próprios Princípios",
+      "subtitulo": "A coerência entre pensamento, palavra e ação",
+      "autoria": "JCAP",
+      "data": "Junho de 2025",
+      "paragrafos": [
+        "A verdadeira força moral de uma pessoa reside na integridade das suas escolhas diárias.",
+        "Manter-se fiel aos princípios em momentos de facilidade é simples; a verdadeira prova ocorre quando a fidelidade exige coragem e sacrifício."
+      ]
+    },
+    {
+      "id": "bastiao-2025-07",
+      "numero": 7,
+      "mes": "Julho",
+      "titulo": "O Valor do Silêncio e da Reflexão",
+      "subtitulo": "O recolhimento interior para resgatar a clareza",
+      "autoria": "JCAP",
+      "data": "Julho de 2025",
+      "paragrafos": [
+        "O silêncio não é ausência de som, mas a presença da consciência centrada em si mesma.",
+        "Reservar momentos diários para a reflexão profunda nos protege da dispersão e renova nossas energias para o serviço."
+      ]
+    },
+    {
+      "id": "bastiao-2025-08",
+      "numero": 8,
+      "mes": "Agosto",
+      "titulo": "O Serviço Desinteressado",
+      "subtitulo": "A ação voltada ao bem sem expectativa de frutos",
+      "autoria": "JCAP",
+      "data": "Agosto de 2025",
+      "paragrafos": [
+        "Agir com retidão sem buscar elogios ou aplausos é um dos graus mais elevados da conduta humana.",
+        "O serviço prestado com generosidade transforma tanto quem o realiza quanto a comunidade que o recebe."
+      ]
+    },
+    {
+      "id": "bastiao-2025-09",
+      "numero": 9,
+      "mes": "Setembro",
+      "titulo": "A Cultura como Elevação do Espírito",
+      "subtitulo": "O papel dos mitos e das artes na formação humana",
+      "autoria": "JCAP",
+      "data": "Setembro de 2025",
+      "paragrafos": [
+        "A grande cultura transmite verdades atemporais sob formas de beleza e inspiração.",
+        "O estudo dos mitos e das obras clássicas amplia nossa visão do ser humano e fortalece nossa admiração pelo belo e pelo bom."
+      ]
+    },
+    {
+      "id": "bastiao-2025-10",
+      "numero": 10,
+      "mes": "Outubro",
+      "titulo": "A Cortesia e o Respeito Humano",
+      "subtitulo": "A nobreza expressa nos pequenos gestos",
+      "autoria": "JCAP",
+      "data": "Outubro de 2025",
+      "paragrafos": [
+        "A cortesia é o óleo que suaviza o atrito nas relações humanas diárias.",
+        "Tratar cada pessoa com dignidade e atenção sincera é a primeira demonstração prática de uma filosofia de vida."
+      ]
+    },
+    {
+      "id": "bastiao-2025-11",
+      "numero": 11,
+      "mes": "Novembro",
+      "titulo": "A Coragem de Aprender com os Erros",
+      "subtitulo": "Transformando falhas em degraus de evolução",
+      "autoria": "JCAP",
+      "data": "Novembro de 2025",
+      "paragrafos": [
+        "O erro não deve ser motivo de paralisia ou culpa, mas de análise lúcida e aprendizado.",
+        "A postura filosófica diante da falha é a retificação imediata e a firme determinação de não reincidir."
+      ]
+    },
+    {
+      "id": "bastiao-2025-12",
+      "numero": 12,
+      "mes": "Dezembro",
+      "titulo": "A Retrospectiva do Ano e o Dever Cumprido",
+      "subtitulo": "Exame de consciência e renovação das metas",
+      "autoria": "JCAP",
+      "data": "Dezembro de 2025",
+      "paragrafos": [
+        "Ao encerrar o ano, é fundamental olhar para trás e avaliar objetivamente o trabalho realizado.",
+        "Celebrar as vitórias internas conquistadas e renovar o compromisso com o crescimento interior para os ciclos que virão."
+      ]
+    }
+  ]
+}

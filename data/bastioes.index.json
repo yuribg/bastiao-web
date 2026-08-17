@@ -1,0 +1,60 @@
+{
+  "anoCorrente": 2026,
+  "lemaCorrente": "Elegância",
+  "artigosAnoCorrente": [
+    {
+      "id": "bastiao-2026-02",
+      "numero": 2,
+      "mes": "Fevereiro",
+      "titulo": "Para que serve a Elegância",
+      "autoria": "JCAP",
+      "arquivo": "bastioes/2026/2026-02-b546.json"
+    },
+    {
+      "id": "bastiao-2026-01",
+      "numero": 1,
+      "mes": "Janeiro",
+      "titulo": "Ano da Elegância",
+      "autoria": "JCAP",
+      "arquivo": "bastioes/2026/2026-01-b545.json"
+    }
+  ],
+  "acervoHistorico": [
+    {
+      "ano": 2025,
+      "lema": "Sacrifício",
+      "autoria": "JCAP",
+      "pdfUrl": "bastioes/compilados/Bastiões 2025 - Sacrifício (533 a 544).pdf"
+    },
+    {
+      "ano": 2024,
+      "lema": "Permanência",
+      "autoria": "JCAP",
+      "pdfUrl": "bastioes/compilados/Bastiões 2024 - Permanência - (522 a 532).pdf"
+    },
+    {
+      "ano": 2023,
+      "lema": "Lucidez",
+      "autoria": "JCAP e DSG",
+      "pdfUrl": "bastioes/compilados/Bastiões 2023 - Cordura - Lucidez (511 a 521).pdf"
+    },
+    {
+      "ano": 2022,
+      "lema": "Fidelidade",
+      "autoria": "JCAP e DSG",
+      "pdfUrl": "bastioes/compilados/Bastiões 2022 - Fidelidade (500 a 510).pdf"
+    },
+    {
+      "ano": 2021,
+      "lema": "Identidade",
+      "autoria": "JCAP e DSG",
+      "pdfUrl": "bastioes/compilados/Bastiões 2021 - Identidade (489 a  499).pdf"
+    },
+    {
+      "ano": 2020,
+      "lema": "Fortaleza",
+      "autoria": "JCAP e DSG",
+      "pdfUrl": "bastioes/compilados/Bastiões 2020 - Fortaleza (478 a 488).pdf"
+    }
+  ]
+}
