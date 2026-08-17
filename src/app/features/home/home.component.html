@@ -35,7 +35,7 @@
                   </mat-card-header>
                   
                   <mat-card-content>
-                    <p>{{ artigo.autoria }}</p>
+                    <p>Autoria: {{ artigo.autoria }}</p>
                   </mat-card-content>
 
                   <mat-card-actions [align]="'start'">
@@ -86,7 +86,7 @@
 
                     <mat-card-actions [align]="'start'">
                       <a mat-stroked-button color="accent" [href]="item.pdfUrl" target="_blank">
-                        <mat-icon>picture_as_pdf</mat-icon> Abrir PDF ({{ item.ano }})
+                        <mat-icon>picture_as_pdf</mat-icon> Ler bastiões de {{ item.ano }}
                       </a>
                     </mat-card-actions>
                   </mat-card>

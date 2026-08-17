@@ -83,10 +83,23 @@
 
 .card-bastiao,
 .card-historico {
+    display: flex !important;
+    flex-direction: column !important;
     background: var(--surface-card) !important;
     border: 1px solid var(--border-soft) !important;
     border-radius: 16px !important;
     overflow: hidden;
+}
+
+.card-bastiao mat-card-content,
+.card-historico mat-card-content {
+    flex-grow: 1;
+    margin-bottom: 8px;
+}
+
+.card-bastiao mat-card-actions,
+.card-historico mat-card-actions {
+    margin-top: auto;
 }
 
 .mat-mdc-card-header {
@@ -166,9 +179,9 @@
 }
 
 .mat-mdc-card-actions {
-    padding-top: 18px !important;
     border-top: 1px solid rgba(0, 148, 133, 0.12);
     margin-top: 16px;
+    background: #08635714 !important;
 }
 
 .mat-mdc-card-actions .mat-mdc-raised-button,
@@ -186,8 +199,18 @@
 }
 
 .mat-mdc-card-actions .mat-mdc-outlined-button {
-    border-color: var(--turquesa-kefer) !important;
+    border: none;
     color: var(--verde-heket) !important;
+}
+
+:host ::ng-deep .mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before {
+    background-color: none !important;
+}
+
+:host ::ng-deep .mat-mdc-card-actions .mat-mdc-outlined-button:hover,
+:host ::ng-deep .mat-mdc-outlined-button .mat-mdc-button-persistent-ripple::before {
+    background: none !important;
+    background-color: #08635720 !important;
 }
 
 .search-bar {
