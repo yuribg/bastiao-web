@@ -37,5 +37,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: jamesives/github-pages-deploy-action@v4
         with:
-          folder: dist/NOME-DO-SEU-PROJETO/browser # Ajuste para a pasta criada no seu dist
+          folder: dist/bastiao-web/browser # Ajuste para a pasta criada no seu dist
           branch: gh-pages
