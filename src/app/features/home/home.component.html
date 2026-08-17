@@ -1,0 +1,102 @@
+<div class="header-banner">
+  <div class="header-container">
+    <img [src]="logoUrl" alt="Nova Acrópole" class="brand-logo" />
+    <div class="header-text">
+      <h1>Bastião</h1>
+      <p class="subtitle">Artigos para formação filosófica</p>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  @if (bastiaoService.loading()) {
+    <div class="loading-state">
+      <p>Carregando acervo...</p>
+    </div>
+  } @else {
+    <!-- O alias '; as data' funciona perfeitamente aqui dentro do @if -->
+    @if (bastiaoService.indexData(); as data) {
+      <mat-tab-group color="accent" headerPosition="below" animationDuration="300ms">
+        
+        <!-- ABA 1: ANO CORRENTE (Bastiões do Ano) -->
+        <mat-tab [label]="'Bastiões de ' + data.anoCorrente">
+          <div class="tab-content">
+            <div class="section-intro">
+              <h2>Artigos de {{ data.anoCorrente }} - {{ data.lemaCorrente }}</h2>
+              <p>Confira os textos publicados mês a mês para acompanhamento.</p>
+            </div>
+
+            <div class="grid-bastioes">
+              @for (artigo of data.artigosAnoCorrente; track artigo.id) {
+                <mat-card class="card-bastiao">
+                  <mat-card-header class="mes-header">
+                    <mat-chip class="badge-mes">{{ artigo.mes }}</mat-chip>
+                    <mat-card-title>{{ artigo.titulo }}</mat-card-title>
+                  </mat-card-header>
+                  
+                  <mat-card-content>
+                    <p>{{ artigo.autoria }}</p>
+                  </mat-card-content>
+
+                  <mat-card-actions [align]="'start'">
+                    <a mat-stroked-button color="accent" [routerLink]="['/ler', artigo.id]">
+                      <mat-icon>menu_book</mat-icon> Ler Bastião
+                    </a>
+                  </mat-card-actions>
+                </mat-card>
+              }
+            </div>
+          </div>
+        </mat-tab>
+
+        <!-- ABA 2: BASTIÕES DE ANOS ANTERIORES -->
+        <mat-tab label="Bastiões de Anos Anteriores">
+          <div class="tab-content">
+            <div class="section-intro">
+              <h2>Anos Anteriores</h2>
+              <p>Baixe ou visualize o compêndio completo dos anos anteriores em formato PDF.</p>
+            </div>
+
+            <div class="search-bar">
+              <mat-icon>search</mat-icon>
+              <input
+                type="text"
+                [(ngModel)]="pesquisaHistorico"
+                placeholder="Pesquisar por ano ou tema do bastião"
+                aria-label="Pesquisar bastiões históricos"
+              />
+            </div>
+
+            @if (getAcervoFiltrado(data).length === 0) {
+              <div class="empty-state">
+                <p>Nenhum resultado encontrado para "{{ pesquisaHistorico }}".</p>
+              </div>
+            } @else {
+              <div class="grid-acervo">
+                @for (item of getAcervoFiltrado(data); track item.ano) {
+                  <mat-card class="card-historico">
+                    <mat-card-header class="historico-header">
+                      <div class="ano-badge">{{ item.ano }}</div>
+                      <mat-card-title>{{ item.lema }}</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                      <p>Autoria: {{ item.autoria }}</p>
+                    </mat-card-content>
+
+                    <mat-card-actions [align]="'start'">
+                      <a mat-stroked-button color="accent" [href]="item.pdfUrl" target="_blank">
+                        <mat-icon>picture_as_pdf</mat-icon> Abrir PDF ({{ item.ano }})
+                      </a>
+                    </mat-card-actions>
+                  </mat-card>
+                }
+              </div>
+            }
+          </div>
+        </mat-tab>
+
+      </mat-tab-group>
+    }
+  }
+</main>

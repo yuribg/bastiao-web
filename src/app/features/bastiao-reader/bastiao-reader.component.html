@@ -1,0 +1,39 @@
+<div class="reader-container">
+  <div class="actions-bar">
+    <a mat-stroked-button color="accent" routerLink="/">
+      <mat-icon>arrow_back</mat-icon> Voltar ao Acervo
+    </a>
+  </div>
+
+  @if (loading()) {
+    <div class="status-msg">Carregando texto...</div>
+  } @else {
+    <!-- O alias '; as item' funciona perfeitamente aqui dentro do @if -->
+    @if (artigo(); as item) {
+      <article class="article-paper">
+        <header class="article-header">
+          <span class="article-date">{{ item.data }}</span>
+          <h1 class="article-title">{{ item.titulo }}</h1>
+          <h2 class="article-subtitle">B{{ item.numero }}</h2>
+          <div class="article-author"><strong>{{ item.autoria }}</strong></div>
+        </header>
+
+        <hr class="divider" />
+
+        <main class="article-body">
+          @for (p of item.paragrafos; track $index) {
+            <p>{{ p }}</p>
+          }
+        </main>
+      </article>
+    } @else {
+      <div class="status-msg">Artigo não encontrado ou indisponível.</div>
+    }
+  }
+
+  <div class="actions-bar">
+    <a mat-stroked-button color="accent" routerLink="/">
+      <mat-icon>arrow_back</mat-icon> Voltar ao Acervo
+    </a>
+  </div>
+</div>
