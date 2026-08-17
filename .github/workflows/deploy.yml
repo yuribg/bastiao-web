@@ -1,0 +1,41 @@
+name: Deploy Angular App
+
+on:
+  push:
+    branches:
+      - main # Ou 'master', dependendo da sua branch principal
+
+permissions:
+  contents: write # Permissão necessária para publicar na branch gh-pages
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Baixa o código do repositório
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Configura o Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      # 3. Instala as dependências
+      - name: Install dependencies
+        run: npm ci
+
+      # 4. Faz o build da aplicação Angular
+      # Substitua "NOME-DO-REPOSITORIO" pelo nome exato do seu repositório no GitHub
+      - name: Build Angular App
+        run: npx ng build --configuration production --base-href /bastiao-web/
+
+      # 5. Publica os artefatos na branch gh-pages
+      - name: Deploy to GitHub Pages
+        uses: jamesives/github-pages-deploy-action@v4
+        with:
+          folder: dist/NOME-DO-SEU-PROJETO/browser # Ajuste para a pasta criada no seu dist
+          branch: gh-pages
