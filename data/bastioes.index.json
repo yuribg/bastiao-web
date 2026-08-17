@@ -3,6 +3,14 @@
   "lemaCorrente": "Elegância",
   "artigosAnoCorrente": [
     {
+      "id": "bastiao-2026-03",
+      "numero": 3,
+      "mes": "Março",
+      "titulo": "A energia de Nova Acrópole",
+      "autoria": "JCAP",
+      "arquivo": "bastioes/2026/2026-03-b547.json"
+    },
+    {
       "id": "bastiao-2026-02",
       "numero": 2,
       "mes": "Fevereiro",
