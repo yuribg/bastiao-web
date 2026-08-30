@@ -265,6 +265,27 @@
     color: rgba(33, 37, 41, 0.75);
 }
 
+// Proteção contra print: ocultar conteúdo durante impressão
+@media print {
+    .header-banner {
+        display: none !important;
+    }
+
+    .container {
+        display: none !important;
+    }
+
+    body::after,
+    :host::after {
+        content: 'A impressão e captura de tela são desabilitadas neste site.';
+        display: block;
+        text-align: center;
+        padding: 50px 20px;
+        font-size: 1.2rem;
+        color: #333;
+    }
+}
+
 @media (max-width: 600px) {
     .mat-mdc-card-header,
     .mat-mdc-card-content,

@@ -57,6 +57,22 @@
     -ms-user-select: none;
 }
 
+// Proteção contra print: ocultar conteúdo durante impressão
+@media print {
+    .article-paper {
+        display: none !important;
+    }
+    
+    .reader-container::after {
+        content: 'A impressão e captura de tela são desabilitadas neste site.';
+        display: block;
+        text-align: center;
+        padding: 50px 20px;
+        font-size: 1.2rem;
+        color: #333;
+    }
+}
+
 .article-author {
     font-size: 0.95rem;
     color: #777;
