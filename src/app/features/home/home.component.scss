@@ -50,6 +50,14 @@
     font-size: 1.08rem;
 }
 
+// Estratégia 1: Desabilitar seleção de texto
+.no-copy {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 .container {
     max-width: 1120px;
     margin: 28px auto 48px;

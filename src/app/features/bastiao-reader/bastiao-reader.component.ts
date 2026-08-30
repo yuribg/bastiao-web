@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, signal } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
@@ -14,7 +14,7 @@ import { ConteudoArtigo } from '../../core/models/bastiao.model';
   templateUrl: './bastiao-reader.component.html',
   styleUrl: './bastiao-reader.component.scss'
 })
-export class BastiaoReaderComponent implements OnInit {
+export class BastiaoReaderComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private bastiaoService = inject(BastiaoService);
 
@@ -48,5 +48,23 @@ export class BastiaoReaderComponent implements OnInit {
 
   windowPrint(): void {
     window.print();
+  }
+
+  ngOnDestroy(): void {
+    // Cleanup se necessário
+  }
+
+  // Bloqueia evento de cópia (Ctrl+C, Cmd+C)
+  @HostListener('copy', ['$event'])
+  onCopy(event: ClipboardEvent): void {
+    event.preventDefault();
+  }
+
+  // Bloqueia atalhos de teclado (Ctrl+C, Ctrl+X, Cmd+C, Cmd+X)
+  @HostListener('keydown', ['$event'])
+  onKeyDown(event: KeyboardEvent): void {
+    if ((event.ctrlKey || event.metaKey) && (event.key === 'c' || event.key === 'x')) {
+      event.preventDefault();
+    }
   }
 }

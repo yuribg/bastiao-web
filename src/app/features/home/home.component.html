@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<main class="container">
+<main class="container no-copy">
   @if (bastiaoService.loading()) {
     <div class="loading-state">
       <p>Carregando acervo...</p>
@@ -21,7 +21,7 @@
         <!-- ABA 1: ANO CORRENTE (Bastiões do Ano) -->
         <mat-tab [label]="'Bastiões de ' + data.anoCorrente">
           <div class="tab-content">
-            <div class="section-intro">
+            <div class="section-intro no-copy">
               <h2>Artigos de {{ data.anoCorrente }} - {{ data.lemaCorrente }}</h2>
               <p>Confira os textos publicados mês a mês para acompanhamento.</p>
             </div>
@@ -51,7 +51,7 @@
         <!-- ABA 2: BASTIÕES DE ANOS ANTERIORES -->
         <mat-tab label="Bastiões de Anos Anteriores">
           <div class="tab-content">
-            <div class="section-intro">
+            <div class="section-intro no-copy">
               <h2>Anos Anteriores</h2>
               <p>Baixe ou visualize o compêndio completo dos anos anteriores em formato PDF.</p>
             </div>

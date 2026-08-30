@@ -49,6 +49,14 @@
     margin-bottom: 16px;
 }
 
+// Estratégia 1: Desabilitar seleção de texto
+.no-copy {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
 .article-author {
     font-size: 0.95rem;
     color: #777;
