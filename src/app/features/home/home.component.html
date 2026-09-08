@@ -94,6 +94,43 @@
           </div>
         </mat-tab>
 
+        <!-- ABA 3: LIVROS -->
+        <mat-tab label="Livros">
+          <div class="tab-content">
+            <div class="section-intro no-copy">
+              <h2>Livros</h2>
+              <p>Baixe os livros disponíveis para aprofundar sua formação filosófica.</p>
+            </div>
+
+            @if (!data.livros?.length) {
+              <div class="empty-state">
+                <p>Em breve, novos livros estarão disponíveis para download.</p>
+              </div>
+            } @else {
+              <div class="grid-livros">
+                @for (livro of data.livros; track livro.pdfUrl) {
+                  <mat-card class="card-livro">
+                    <mat-card-header class="livro-header">
+                      <mat-card-title>{{ livro.titulo }}</mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                      <p><strong>Autoria:</strong> {{ livro.autoria }}</p>
+                      <p>{{ livro.descricao }}</p>
+                    </mat-card-content>
+
+                    <mat-card-actions [align]="'start'">
+                      <a mat-stroked-button color="accent" [href]="livro.pdfUrl" download>
+                        <mat-icon>download</mat-icon> Baixar livro
+                      </a>
+                    </mat-card-actions>
+                  </mat-card>
+                }
+              </div>
+            }
+          </div>
+        </mat-tab>
+
       </mat-tab-group>
     }
   }

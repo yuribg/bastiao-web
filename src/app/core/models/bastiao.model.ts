@@ -16,11 +16,19 @@ export interface CompendioHistorico {
   pdfUrl: string;
 }
 
+export interface Livro {
+  titulo: string;
+  autoria: string;
+  descricao: string;
+  pdfUrl: string;
+}
+
 export interface BastiõesIndex {
   anoCorrente: number;
   lemaCorrente: number;
   artigosAnoCorrente: ArtigoAnoCorrente[];
   acervoHistorico: CompendioHistorico[];
+  livros?: Livro[];
 }
 
 export interface ConteudoArtigo {
