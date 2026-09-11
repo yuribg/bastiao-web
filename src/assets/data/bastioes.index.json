@@ -69,5 +69,27 @@
   ],
   "acervoHistorico": [
   ],
-  "livros": []
+  "livros": [
+    {
+      "titulo": "Apologia de Sócrates",
+      "autoria": "Platão",
+      "descricao": "A defesa de Sócrates perante a corte ateniense, uma obra clássica da filosofia ocidental que explora a virtude, a sabedoria e o compromisso com os princípios filosóficos.",
+      "pdfUrl": "livros/(platao)_apologia_de_socrates.pdf",
+      "urlOnline": "https://dominiopublico.mec.gov.br/pesquisa/DetalheObraForm.do?select_action=&co_obra=2296"
+    },
+    {
+      "titulo": "O Banquete",
+      "autoria": "Platão",
+      "descricao": "Um diálogo sobre o amor e a beleza, onde Sócrates e seus discípulos exploram diferentes perspectivas sobre o significado profundo da alma e do desejo.",
+      "pdfUrl": "livros/(platao)_o_banquete.pdf",
+      "urlOnline": "https://dominiopublico.mec.gov.br/pesquisa/DetalheObraForm.do?select_action=&co_obra=2279"
+    },
+    {
+      "titulo": "Parmênides",
+      "autoria": "Platão",
+      "descricao": "Um dos diálogos mais complexos de Platão, que examina a natureza do ser, a mudança e a multiplicidade através de uma discussão entre Sócrates e o filósofo Parmênides.",
+      "pdfUrl": "livros/(platao)_parmenides.pdf",
+      "urlOnline": "https://dominiopublico.mec.gov.br/pesquisa/DetalheObraForm.do?select_action=&co_obra=2286"
+    }
+  ]
 }

@@ -21,6 +21,7 @@ export interface Livro {
   autoria: string;
   descricao: string;
   pdfUrl: string;
+  urlOnline?: string;
 }
 
 export interface BastiõesIndex {

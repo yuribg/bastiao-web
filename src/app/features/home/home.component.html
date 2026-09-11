@@ -100,7 +100,7 @@
           <div class="tab-content">
             <div class="section-intro no-copy">
               <h2>Livros</h2>
-              <p>Baixe os livros disponíveis para aprofundar sua formação filosófica.</p>
+              <p>Baixe os livros de domínio público disponíveis para aprofundar sua formação filosófica.</p>
             </div>
 
             @if (!data.livros?.length) {
@@ -124,6 +124,11 @@
                       <a mat-stroked-button color="accent" [href]="livro.pdfUrl" download>
                         <mat-icon>download</mat-icon> Baixar livro
                       </a>
+                      @if (livro.urlOnline) {
+                        <a mat-stroked-button color="accent" [href]="livro.urlOnline" target="_blank">
+                          <mat-icon>open_in_new</mat-icon> Ver online
+                        </a>
+                      }
                     </mat-card-actions>
                   </mat-card>
                 }
