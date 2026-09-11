@@ -34,7 +34,7 @@
                   </mat-card-header>
                   
                   <mat-card-content>
-                    <p><strong>[Bastião de {{ artigo.mes }}] </strong> Autoria: {{ artigo.autoria }}</p>
+                    <p><strong>[Bastião {{ artigo.numero }} de {{ artigo.mes }}] </strong> Autoria: {{ artigo.autoria }}</p>
                   </mat-card-content>
 
                   <mat-card-actions [align]="'start'">
@@ -68,7 +68,8 @@
 
             @if (getAcervoFiltrado(data).length === 0) {
               <div class="empty-state">
-                <p>Nenhum resultado encontrado para "{{ pesquisaHistorico }}".</p>
+                <p>Em breve, os bastiões dos anteriores estarão disponíveis.</p>
+                <!-- <p>Nenhum resultado encontrado para "{{ pesquisaHistorico }}".</p> -->
               </div>
             } @else {
               <div class="grid-acervo">
