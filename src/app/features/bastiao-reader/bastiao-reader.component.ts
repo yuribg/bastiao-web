@@ -6,11 +6,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { BastiaoService } from '../../core/services/bastiao.service';
 import { ConteudoArtigo } from '../../core/models/bastiao.model';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-bastiao-reader',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule, MatCardModule],
+  imports: [CommonModule, RouterModule, MatButtonModule, MatIconModule, MatCardModule, FooterComponent],
   templateUrl: './bastiao-reader.component.html',
   styleUrl: './bastiao-reader.component.scss'
 })

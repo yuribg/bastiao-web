@@ -9,6 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { BastiaoService } from '../../core/services/bastiao.service';
 import { BastiõesIndex, CompendioHistorico } from '../../core/models/bastiao.model';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -21,7 +22,8 @@ import { BastiõesIndex, CompendioHistorico } from '../../core/models/bastiao.mo
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatChipsModule
+    MatChipsModule,
+    FooterComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

@@ -16,7 +16,7 @@
   } @else {
     <!-- O alias '; as data' funciona perfeitamente aqui dentro do @if -->
     @if (bastiaoService.indexData(); as data) {
-      <mat-tab-group color="accent" headerPosition="below" animationDuration="300ms">
+      <mat-tab-group color="accent" headerPosition="above" animationDuration="300ms">
         
         <!-- ABA 1: ANO CORRENTE (Bastiões do Ano) -->
         <mat-tab [label]="'Bastiões de ' + data.anoCorrente">
@@ -141,3 +141,5 @@
     }
   }
 </main>
+
+<app-footer></app-footer>
