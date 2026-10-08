@@ -22,7 +22,7 @@
 
         <main class="article-body">
           @for (p of item.paragrafos; track $index) {
-            <p>{{ p }}</p>
+            <p [innerHTML]="p"></p>
           }
         </main>
       </article>

@@ -3,6 +3,14 @@
   "lemaCorrente": "Elegância",
   "artigosAnoCorrente": [
     {
+      "id": "bastiao-2026-10",
+      "numero": 553,
+      "mes": "Outubro",
+      "titulo": "Fanatismo",
+      "autoria": "JCAP",
+      "arquivo": "bastioes/2026/2026-10-b553.json"
+    },
+    {
       "id": "bastiao-2026-09",
       "numero": 552,
       "mes": "Setembro",
