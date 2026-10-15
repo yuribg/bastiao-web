@@ -106,6 +106,16 @@
     border-radius: 10px !important;
 }
 
+@media (max-width: 600px) {
+    .reader-container {
+        padding: 0 8px;
+    }
+
+    .article-paper {
+        padding: 28px 20px;
+    }
+}
+
 @media print {
     .actions-bar { display: none; }
     .article-paper { box-shadow: none; padding: 0; }
