@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { BastiaoService } from '../../core/services/bastiao.service';
-import { BastiõesIndex, CompendioHistorico } from '../../core/models/bastiao.model';
+import { BastiõesIndex, CompendioHistorico, Livro } from '../../core/models/bastiao.model';
 import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
@@ -32,6 +32,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   public bastiaoService = inject(BastiaoService);
   public logoUrl = 'brand/logo-acropole.svg';
   public pesquisaHistorico = '';
+  public readonly filtrosLivroIniciais = ['0-9', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+  public filtroLivroInicial: string | null = null;
+  public pesquisaLivros = '';
+  public paginaLivros = 0;
+  public readonly livrosPorPagina = 50;
 
   ngOnInit(): void {
     this.bastiaoService.loadIndex();
@@ -121,5 +126,49 @@ export class HomeComponent implements OnInit, OnDestroy {
 
       return textoPesquisa.includes(termo);
     });
+  }
+
+  public getLivrosFiltrados(livros: Livro[] | undefined): Livro[] {
+    const termo = this.normalizarTexto(this.pesquisaLivros.trim());
+
+    return (livros ?? []).filter((livro) => {
+      const inicial = this.normalizarTexto(livro.titulo.trim().charAt(0));
+      const correspondeInicial = !this.filtroLivroInicial
+        || (this.filtroLivroInicial === '0-9'
+          ? /^\d/.test(inicial)
+          : inicial === this.normalizarTexto(this.filtroLivroInicial));
+      const textoLivro = this.normalizarTexto(
+        `${livro.titulo} ${livro.autoria} ${livro.descricao}`
+      );
+
+      return correspondeInicial && (!termo || textoLivro.includes(termo));
+    });
+  }
+
+  public getLivrosPaginados(livros: Livro[] | undefined): Livro[] {
+    const inicio = this.paginaLivros * this.livrosPorPagina;
+    return this.getLivrosFiltrados(livros).slice(inicio, inicio + this.livrosPorPagina);
+  }
+
+  public getTotalPaginasLivros(livros: Livro[] | undefined): number {
+    return Math.ceil(this.getLivrosFiltrados(livros).length / this.livrosPorPagina);
+  }
+
+  public selecionarInicialLivro(inicial: string): void {
+    this.filtroLivroInicial = this.filtroLivroInicial === inicial ? null : inicial;
+    this.paginaLivros = 0;
+  }
+
+  public limparFiltrosLivros(): void {
+    this.filtroLivroInicial = null;
+    this.pesquisaLivros = '';
+    this.paginaLivros = 0;
+  }
+
+  private normalizarTexto(texto: string): string {
+    return texto
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLocaleLowerCase('pt-BR');
   }
 }

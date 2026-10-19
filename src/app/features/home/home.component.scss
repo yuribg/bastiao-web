@@ -313,6 +313,95 @@
     color: rgba(33, 37, 41, 0.5);
 }
 
+.livros-filtros {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 18px 0 22px;
+}
+
+.livros-filtros-opcoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.livros-filtros button {
+    min-width: 40px;
+}
+
+.livros-filtros .limpar-filtro-livros {
+    min-width: auto;
+}
+
+.livros-search {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+.livros-search input {
+    flex: 1;
+    min-width: 0;
+}
+
+:host ::ng-deep .livros-filtros-opcoes .mat-mdc-outlined-button {
+    --mdc-outlined-button-label-text-color: #6c757d;
+    --mdc-outlined-button-outline-color: #adb5bd;
+}
+
+:host ::ng-deep .livros-filtros-opcoes .mat-mdc-outlined-button.selecionado {
+    --mdc-outlined-button-label-text-color: var(--verde-heket);
+    --mdc-outlined-button-outline-color: var(--verde-heket);
+    background-color: #08635714;
+}
+
+:host ::ng-deep .livros-filtros-opcoes .mat-mdc-outlined-button:not(:disabled):hover {
+    --mdc-outlined-button-label-text-color: var(--verde-heket);
+    --mdc-outlined-button-outline-color: var(--verde-heket);
+    background-color: #08635714;
+}
+
+:host ::ng-deep .livros-paginacao .mat-mdc-outlined-button {
+    --mdc-outlined-button-label-text-color: var(--verde-heket);
+    --mdc-outlined-button-outline-color: var(--verde-heket);
+    color: var(--verde-heket);
+}
+
+:host ::ng-deep .livros-paginacao .mat-mdc-outlined-button:not(:disabled):hover {
+    background-color: #08635714;
+}
+
+:host ::ng-deep .livros-paginacao .mat-mdc-outlined-button:disabled {
+    --mdc-outlined-button-label-text-color: #6c757d;
+    color: #6c757d;
+}
+
+:host ::ng-deep .livros-paginacao .paginacao-icone {
+    width: 40px;
+    min-width: 40px;
+    padding: 0;
+}
+
+:host ::ng-deep .livros-paginacao .paginacao-icone .mat-icon {
+    margin: 0;
+}
+
+.livros-paginacao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0 8px;
+}
+
+.livros-paginacao span {
+    color: rgba(33, 37, 41, 0.8);
+    font-weight: 600;
+}
+
 .empty-state {
     margin-top: 18px;
     padding: 18px 16px;

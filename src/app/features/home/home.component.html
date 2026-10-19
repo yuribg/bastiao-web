@@ -125,31 +125,162 @@
                 <p>Em breve, novos livros estarão disponíveis para download.</p>
               </div>
             } @else {
-              <div class="grid-livros">
-                @for (livro of data.livros; track livro.pdfUrl) {
-                  <mat-card class="card-livro">
-                    <mat-card-header class="livro-header">
-                      <mat-card-title>{{ livro.titulo }}</mat-card-title>
-                    </mat-card-header>
-
-                    <mat-card-content>
-                      <p><strong>Autoria:</strong> {{ livro.autoria }}</p>
-                      <p>{{ livro.descricao }}</p>
-                    </mat-card-content>
-
-                    <mat-card-actions [align]="'start'">
-                      <a mat-stroked-button color="accent" [href]="livro.pdfUrl" download>
-                        <mat-icon>download</mat-icon> Baixar livro
-                      </a>
-                      @if (livro.urlOnline) {
-                        <a mat-stroked-button color="accent" [href]="livro.urlOnline" target="_blank">
-                          <mat-icon>open_in_new</mat-icon> Ver online
-                        </a>
-                      }
-                    </mat-card-actions>
-                  </mat-card>
-                }
+              <div class="search-bar livros-search">
+                <mat-icon>search</mat-icon>
+                <input
+                  type="search"
+                  [(ngModel)]="pesquisaLivros"
+                  (ngModelChange)="paginaLivros = 0"
+                  placeholder="Pesquisar por título, autoria ou descrição"
+                  aria-label="Pesquisar livros"
+                />
               </div>
+
+              <nav class="livros-filtros" aria-label="Filtrar livros pela inicial do título">
+                <div class="livros-filtros-opcoes">
+                  <button
+                    mat-stroked-button
+                    type="button"
+                    class="limpar-filtro-livros"
+                    [disabled]="!filtroLivroInicial && !pesquisaLivros"
+                    (click)="limparFiltrosLivros()"
+                  >
+                    Mostrar todos
+                  </button>
+                  @for (inicial of filtrosLivroIniciais; track inicial) {
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      [attr.aria-pressed]="filtroLivroInicial === inicial"
+                      [class.selecionado]="filtroLivroInicial === inicial"
+                      (click)="selecionarInicialLivro(inicial)"
+                    >
+                      {{ inicial }}
+                    </button>
+                  }
+                </div>
+              </nav>
+
+              @if (getLivrosFiltrados(data.livros).length === 0) {
+                <div class="empty-state">
+                  <p>Nenhum livro encontrado com os filtros selecionados.</p>
+                </div>
+              } @else {
+                @if (getTotalPaginasLivros(data.livros) > 1) {
+                  <nav class="livros-paginacao" aria-label="Paginação dos livros">
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      class="paginacao-icone"
+                      aria-label="Primeira página"
+                      [disabled]="paginaLivros === 0"
+                      (click)="paginaLivros = 0"
+                    >
+                      <mat-icon>first_page</mat-icon>
+                    </button>
+                  <button
+                    mat-stroked-button
+                    type="button"
+                      [disabled]="paginaLivros === 0"
+                      (click)="paginaLivros = paginaLivros - 1"
+                    >
+                      Anterior
+                    </button>
+                    <span aria-live="polite">
+                      Página {{ paginaLivros + 1 }} de {{ getTotalPaginasLivros(data.livros) }}
+                    </span>
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      [disabled]="paginaLivros + 1 >= getTotalPaginasLivros(data.livros)"
+                      (click)="paginaLivros = paginaLivros + 1"
+                    >
+                      Próxima
+                    </button>
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      class="paginacao-icone"
+                      aria-label="Última página"
+                      [disabled]="paginaLivros + 1 >= getTotalPaginasLivros(data.livros)"
+                      (click)="paginaLivros = getTotalPaginasLivros(data.livros) - 1"
+                    >
+                      <mat-icon>last_page</mat-icon>
+                    </button>
+                  </nav>
+                }
+
+                <div class="grid-livros">
+                  @for (livro of getLivrosPaginados(data.livros); track livro.pdfUrl || livro.urlOnline || livro.titulo) {
+                    <mat-card class="card-livro">
+                      <mat-card-header class="livro-header">
+                        <mat-card-title>{{ livro.titulo }}</mat-card-title>
+                      </mat-card-header>
+
+                      <mat-card-content>
+                        <p><strong>Autoria:</strong> {{ livro.autoria }}</p>
+                        <p>{{ livro.descricao }}</p>
+                      </mat-card-content>
+
+                      <mat-card-actions [align]="'start'">
+                        @if (livro.pdfUrl) {
+                          <a mat-stroked-button color="accent" [href]="livro.pdfUrl" download>
+                            <mat-icon>download</mat-icon> Obter livro
+                          </a>
+                        } @else if (livro.urlOnline) {
+                          <a mat-stroked-button color="accent" [href]="livro.urlOnline" target="_blank">
+                            <mat-icon>open_in_new</mat-icon> Obter livro
+                          </a>
+                        }
+                      </mat-card-actions>
+                    </mat-card>
+                  }
+                </div>
+
+                @if (getTotalPaginasLivros(data.livros) > 1) {
+                  <nav class="livros-paginacao" aria-label="Paginação dos livros">
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      class="paginacao-icone"
+                      aria-label="Primeira página"
+                      [disabled]="paginaLivros === 0"
+                      (click)="paginaLivros = 0"
+                    >
+                      <mat-icon>first_page</mat-icon>
+                    </button>
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      [disabled]="paginaLivros === 0"
+                      (click)="paginaLivros = paginaLivros - 1"
+                    >
+                      Anterior
+                    </button>
+                    <span aria-live="polite">
+                      Página {{ paginaLivros + 1 }} de {{ getTotalPaginasLivros(data.livros) }}
+                    </span>
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      [disabled]="paginaLivros + 1 >= getTotalPaginasLivros(data.livros)"
+                      (click)="paginaLivros = paginaLivros + 1"
+                    >
+                      Próxima
+                    </button>
+                    <button
+                      mat-stroked-button
+                      type="button"
+                      class="paginacao-icone"
+                      aria-label="Última página"
+                      [disabled]="paginaLivros + 1 >= getTotalPaginasLivros(data.livros)"
+                      (click)="paginaLivros = getTotalPaginasLivros(data.livros) - 1"
+                    >
+                      <mat-icon>last_page</mat-icon>
+                    </button>
+                  </nav>
+                }
+              }
             }
           </div>
         </mat-tab>
